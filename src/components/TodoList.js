@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
 const TodoList = (props) => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -6,26 +7,11 @@ const TodoList = (props) => {
     <>
       <ul>
         {props.todos.map((todoObj) => (
-          <li key={todoObj.id}>
-            {todoObj.title}
-            <input
-              type="checkbox"
-              checked={todoObj.completed}
-              onChange={() => {
-                props.changeHandler(todoObj.id);
-              }}
-            />
-            <button
-              style={{
-                cursor: "pointer",
-                backgroundColor: "transparent",
-                border: "none",
-              }}
-              onClick={() => props.deleteHandler(todoObj.id)}
-            >
-              🗑️
-            </button>
-          </li>
+          <TodoItem
+            todoObj={todoObj}
+            changeHandler={props.changeHandler}
+            deleteHandler={props.deleteHandler}
+          />
         ))}
       </ul>
       <button
