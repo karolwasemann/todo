@@ -18,7 +18,6 @@ const TodoContainer = () => {
         );
         const allUseres = await usersResp.json();
         const users = allUseres.splice(0, 8);
-        console.log("asdasd");
         setTodosArr(users);
         setIsLoading(false);
       } catch (e) {
@@ -65,8 +64,6 @@ const TodoContainer = () => {
     setTodosArr(todosArr.filter((todo) => todo.userId === 1));
   };
 
-  console.log(todosArr);
-
   return (
     <>
       {todosArr.length === 0 ? (
@@ -77,7 +74,6 @@ const TodoContainer = () => {
           Du hast nichts zu tun. Schäm dich, du unproduktiver Mensch.
         </Alert>
       ) : null}
-      <Header />
       <TodoInput addHandler={addHandler} />
       <TodoCount todosCount={todosArr} todos={todosArr} />
       <button onClick={usersId1}>Show only ID: 1</button>

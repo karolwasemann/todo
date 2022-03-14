@@ -79,3 +79,25 @@ input {
   bottom: 1rem;
   right: 1rem;
 }
+
+header {
+  a {
+    text-decoration: none;
+    color: orange;
+    &:hover {
+      color: white;
+    }
+  }
+  nav {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2rem 0;
+    a {
+      color: orange;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

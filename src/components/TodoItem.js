@@ -3,7 +3,7 @@ import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
 
 const TodoItem = (props) => {
   return (
-    <li key={props.todoObj.id}>
+    <li key={props.todoObj.i}>
       {props.todoObj.title}
       <input
         type="checkbox"
